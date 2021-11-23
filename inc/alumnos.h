@@ -28,7 +28,12 @@ extern "C" {
 /*=====[Public function-like macros]=========================================*/
 
 /*=====[Definitions of public data types]====================================*/
-
+/**
+ * @brief En esta estructura se almacenan los datos del alumno
+ * @param apellidos Arreglo de tipo char que almacena los apellidos
+ * @param nombres Arreglo de tipo char que almacena los nombres
+ * @param documento Arreglo de tipo char que almacena el DNI
+ */
 typedef struct alumno_s {
     char apellidos[30];
     char nombres[30];
@@ -39,8 +44,20 @@ typedef struct alumno_s {
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
 
+/**
+ * @brief Función que sirve para formatear los datos del alumno para su impresión en pantalla
+ * @param cadena Cadena de datos a serializar
+ * @param espacio Número de caracteres de la cadena
+ * @param alumno Estructura con todos los datos del alumno
+ */
 bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno);
 
+/**
+ * @brief Función que llama a SerializarAlumno por cada una de las estructuras alumno_t definidas
+ * @param cadena Cadena a serializar
+ * @param espacio Número de caracteres de la cadena
+ * @param alumno Estructura con los datos del alumno
+ */
 bool SerializarAlumnos(char * cadena, size_t espacio);
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
